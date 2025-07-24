@@ -136,8 +136,8 @@ franca_vitl14 = torch.hub.load('valeoai/Franca', 'franca_vitl14')
 franca_vitg14 = torch.hub.load('valeoai/Franca', 'franca_vitg14')
 
 # Franca -- Laion600M
-franca_vitl14 = torch.hub.load('valeoai/Franca', 'franca_vitl14', weights='LAION600m')
-franca_vitg14 = torch.hub.load('valeoai/Franca', 'franca_vitg14', weights='LAION600m')
+franca_vitl14 = torch.hub.load('valeoai/Franca', 'franca_vitl14', weights='LAION')
+franca_vitg14 = torch.hub.load('valeoai/Franca', 'franca_vitg14', weights='LAION')
 
 # Dinov2 baseline -- In21k
 franca_vitb14 = torch.hub.load('valeoai/Franca', 'franca_vitb14', weights='Dinov2_In21k')

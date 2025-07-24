@@ -11,9 +11,9 @@ from franca.hub.utils import _TEMPDIR, extract_tar_file, load_state_dict_from_ur
 
 _FRANCA_BASE_URL = "https://github.com/valeoai/Franca/releases/download/v1.0.0"
 _FRANCA_ViT_G_CHUNKS = [
-    "_chunked.tar.gz.part_aa",
-    "_chunked.tar.gz.part_ab",
-    "_chunked.tar.gz.part_ac",
+    "chunked.tar.gz.part_aa",
+    "chunked.tar.gz.part_ab",
+    "chunked.tar.gz.part_ac",
 ]
 
 
@@ -81,7 +81,7 @@ def _make_franca_model(
                 state_dict = torch.load(local_state_dict, map_location="cpu", weights_only=True)
         else:
             if arch_name == "vit_giant2":
-                url = [_FRANCA_BASE_URL + f"/{chunk}" for chunk in _FRANCA_ViT_G_CHUNKS]
+                url = [_FRANCA_BASE_URL + f"/{model_full_name}_{chunk}" for chunk in _FRANCA_ViT_G_CHUNKS]
             else:
                 url = _FRANCA_BASE_URL + f"/{model_full_name}.pth"
             state_dict = load_state_dict_from_url(url, map_location="cpu", weights_only=True)
