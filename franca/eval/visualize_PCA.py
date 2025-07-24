@@ -9,28 +9,7 @@ from sklearn.decomposition import PCA
 from torchvision import transforms
 from tqdm import tqdm
 
-# Load DINOv2 model
-model = torch.hub.load("facebookresearch/dinov2", "dinov2_vitl14")
-# model.cuda()
-# model.eval()
-
-# default_config = OmegaConf.load("dinov2/configs/ssl_default_config.yaml") # must
-# loaded_config = OmegaConf.load(
-# "/lustre/fsn1/projects/rech/fhx/commun/ckpts/Imagenet22k/dinov2_vitl14_mat2x_posSK_invmask_ep500/config.yaml"
-# ) #change path accordingly
-# config = OmegaConf.merge(default_config, loaded_config)
-# model, _ = build_model_from_cfg(config, only_teacher=True)
-# state_dict = torch.load(
-#   "/lustre/fsn1/projects/rech/fhx/commun/ckpts/Imagenet22k/dinov2_vitl14_mat2x_posSK_invmask_ep500/eval/training_599999/teacher_checkpoint.pth",
-# map_location="cpu") #change path accordingly
-# state_dict = state_dict["teacher"]
-# state_dict = {k.replace("module.", ""): v for k, v in state_dict.items()}
-# state_dict = {k.replace("backbone.", ""): v for k, v in state_dict.items()}
-# msg = model.load_state_dict(state_dict, strict=False)
-# print(msg)
-# model.cuda()
-# model.eval()
-
+franca_vitl14 = torch.hub.load('valeoai/Franca', 'franca_vitl14')
 
 # Get the patch size from the model
 patch_size = model.patch_size
@@ -203,7 +182,7 @@ if __name__ == "__main__":
     # Update this with your DAVIS dataset path
     davis_root_dir = "/lustre/fsn1/projects/rech/yic/uco38ei/davis_2021/davis_data/JPEGImages/480p/"
     # Update this with your desired output path
-    output_base_dir = "/lustre/fsn1/projects/rech/fhx/commun/pca_viz_daviz/dinov2l_ours_in21k"
+    output_base_dir = "/lustre/fsn1/projects/rech/fhx/commun/pca_viz_daviz/franca_l"
 
     # Process the dataset
     process_davis_dataset(davis_root_dir, output_base_dir)
