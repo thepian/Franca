@@ -39,6 +39,7 @@ rasa = [
     "webdataset==0.2.96",
     "sacred==0.8.7",
     "joblib==1.4.2",
+    "neptune==1.13.0"
 ]
 dev = [
     "flake8",
