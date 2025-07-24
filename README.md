@@ -39,7 +39,7 @@ Welcome to the official codebase for **Franca** (pronounced *Fran-ka*), the firs
 
 Franca matches or surpasses the performance of leading proprietary models such as DINOv2, CLIP, and SigLIPv2. Built on a fully transparent training pipeline leveraging publicly available datasets like ImageNet-21K and LAION-600M, Franca advances the state of self-supervised learning (SSL) in vision.
 
-Key innovations include:
+Key contributions include:
 
 - **Nested Matryoshka Clustering:** A parameter-efficient, multi-head clustering projector that refines feature representations into increasingly fine-grained clusters without increasing model size. This approach improves performance while reducing memory overhead for downstream applications.
 
@@ -62,7 +62,9 @@ Franca is released as a research project to promote transparency, reproducibilit
 
 ## Pretrained models
 
-<table style="margin: auto">
+<div align="center">
+
+<table>
   <thead>
     <tr>
       <th>model</th>
@@ -71,57 +73,79 @@ Franca is released as a research project to promote transparency, reproducibilit
       <th>Resolution</th>
       <th>ImageNet<br />k-NN</th>
       <th>ImageNet<br />linear</th>
+      <th>HummingBird<br />VOC</th>
+      <th>Linear Segm.<br />COCO-Stuff</th>
       <th>download</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>ViT-B/14</td>
-      <td align="right">86 M</td>
-      <td align="center">In21K</td>
+      <td align="left">86 M</td>
+      <td align="left">In21K</td>
       <td align="center">518</td>
-      <td align="right">80.9%</td>
-      <td align="right">82.0%</td>
+      <td align="center">80.9%</td>
+      <td align="center">82.0%</td>
+      <td align="center">75.7%</td>
+      <td align="center">60.5%</td>
       <td><a href="https://github.com/valeoai/Franca/releases/download/v1.0.0/franca_vitb14_In21k.pth">backbone only</a></td>
     </tr>
     <tr>
       <td>ViT-L/14</td>
-      <td align="right">300 M</td>
-      <td align="center">In21K</td>
+      <td align="left">300 M</td>
+      <td align="left">In21K</td>
       <td align="center">224</td>
-      <td align="right">82.6%</td>
-      <td align="right">84.2%</td>
+      <td align="center">82.6%</td>
+      <td align="center">84.2%</td>
+      <td align="center">73.5%</td>
+      <td align="center">60.5%</td>
       <td><a href="https://github.com/valeoai/Franca/releases/download/v1.0.0/franca_vitl14_In21k.pth">backbone only</a></td>
     </tr>
     <tr>
       <td>ViT-L/14</td>
-      <td align="right">300 M</td>
-      <td align="center">LAION-600M</td>
+      <td align="left">300 M</td>
+      <td align="left">LAION-600M</td>
       <td align="center">224</td>
-      <td align="right">82.0%</td>
-      <td align="right">83.8%</td>
+      <td align="center">82.0%</td>
+      <td align="center">83.8%</td>
+      <td align="center">73.5%</td>
+      <td align="center">60.5%</td>
       <td><a href="https://github.com/valeoai/Franca/releases/download/v1.0.0/franca_vitl14_Laion600M.pth">backbone only</a></td>
     </tr>
     <tr>
       <td>ViT-g/14</td>
-      <td align="right">1,100 M</td>
-      <td align="center">In21k</td>
+      <td align="left">1,100 M</td>
+      <td align="left">In21k</td>
       <td align="center">224</td>
-      <td align="right">83.1%</td>
-      <td align="right">85.9%</td>
-      <td><a href="https://github.com/valeoai/Franca/releases/download/v1.0.0/franca_vitg14_In21k_chunked.tar.gz.part_aa">part 1</a>, <a href="https://github.com/valeoai/Franca/releases/download/v1.0.0/franca_vitg14_In21k_chunked.tar.gz.part_ab">part 2</a>, <a href="https://github.com/valeoai/Franca/releases/download/v1.0.0/franca_vitg14_In21k_chunked.tar.gz.part_ac">part 3</a></td>
+      <td align="center">83.1%</td>
+      <td align="center">85.9%</td>
+      <td align="center">71.7%</td>
+      <td align="center">57.1%</td>
+      <td>
+        <a href="https://github.com/valeoai/Franca/releases/download/v1.0.0/franca_vitg14_In21k_chunked.tar.gz.part_aa">part 1</a>,
+        <a href="https://github.com/valeoai/Franca/releases/download/v1.0.0/franca_vitg14_In21k_chunked.tar.gz.part_ab">part 2</a>,
+        <a href="https://github.com/valeoai/Franca/releases/download/v1.0.0/franca_vitg14_In21k_chunked.tar.gz.part_ac">part 3</a>
+      </td>
     </tr>
     <tr>
       <td>ViT-g/14</td>
-      <td align="right">1,100 M</td>
-      <td align="center">LAION-600M</td>
+      <td align="left">1,100 M</td>
+      <td align="left">LAION-600M</td>
       <td align="center">224</td>
-      <td align="right">82.8%</td>
-      <td align="right">85.0%</td>
-      <td><a href="https://github.com/valeoai/Franca/releases/download/v1.0.0/franca_vitg14_Laion600M_chunked.tar.gz.part_aa">part 1</a>, <a href="https://github.com/valeoai/Franca/releases/download/v1.0.0/franca_vitg14_Laion600M_chunked.tar.gz.part_ab">part 2</a>, <a href="https://github.com/valeoai/Franca/releases/download/v1.0.0/franca_vitg14_Laion600M_chunked.tar.gz.part_ac">part 3</a></td>
+      <td align="center">82.8%</td>
+      <td align="center">85.0%</td>
+      <td align="center">76.7%</td>
+      <td align="center">60.4%</td>
+      <td>
+        <a href="https://github.com/valeoai/Franca/releases/download/v1.0.0/franca_vitg14_Laion600M_chunked.tar.gz.part_aa">part 1</a>,
+        <a href="https://github.com/valeoai/Franca/releases/download/v1.0.0/franca_vitg14_Laion600M_chunked.tar.gz.part_ab">part 2</a>,
+        <a href="https://github.com/valeoai/Franca/releases/download/v1.0.0/franca_vitg14_Laion600M_chunked.tar.gz.part_ac">part 3</a>
+      </td>
     </tr>
   </tbody>
 </table>
+
+</div>
 
 ### Pretrained backbones (via PyTorch Hub)
 
@@ -148,7 +172,7 @@ franca_vitl14 = torch.hub.load('valeoai/Franca', 'franca_vitl14', weights='Dinov
 
 ```bash
 git clone https://github.com/valeoai/franca.git
-cd franca
+cd Franca
 # To install Franca you can use the following command
 pip install -e ".[franca]"
 # To install RASA you can use the following command
@@ -157,7 +181,7 @@ pip install -e ".[rasa]"
 pip install -e ".[franca,rasa]"
 ```
 
-We recommend install torch seperately to match your specific config. Simarly, Franca relies on xFormers / cuML and RASA relies on faiss-gpu, which we also recommend installing on your side.
+We recommend install torch separately to match your specific config. Similarly, Franca relies on xFormers / cuML and RASA relies on faiss-gpu, which we also recommend installing on your side.
 
 Otherwise you can use the following commands:
 
@@ -171,7 +195,7 @@ pip install -e ".[rasa,torch,faiss]"
 
 ## Inference code
 
-To load a Franca model directly using the checkpoint from [link](#coming soon), use the example below:
+To load a Franca model directly using the checkpoint from [link](#comingsoon), use the example below:
 
 ```python
 import torch

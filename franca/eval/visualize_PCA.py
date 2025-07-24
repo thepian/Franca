@@ -9,7 +9,9 @@ from sklearn.decomposition import PCA
 from torchvision import transforms
 from tqdm import tqdm
 
-franca_vitl14 = torch.hub.load('valeoai/Franca', 'franca_vitl14')
+model = torch.hub.load('valeoai/Franca', 'franca_vitb14')
+model.cuda()
+model.eval()
 
 # Get the patch size from the model
 patch_size = model.patch_size
@@ -180,9 +182,9 @@ def process_davis_dataset(davis_root_dir, output_base_dir):
 if __name__ == "__main__":
     # Set paths
     # Update this with your DAVIS dataset path
-    davis_root_dir = "/lustre/fsn1/projects/rech/yic/uco38ei/davis_2021/davis_data/JPEGImages/480p/"
+    davis_root_dir = "/home/svenka20/scania/datasets_scania/shashank_data/davis_2021/davis_data/JPEGImages/480p/"
     # Update this with your desired output path
-    output_base_dir = "/lustre/fsn1/projects/rech/fhx/commun/pca_viz_daviz/franca_l"
+    output_base_dir = "/home/svenka20/iveco/shashank/test_pca/pca_viz_daviz/franca_b"
 
     # Process the dataset
     process_davis_dataset(davis_root_dir, output_base_dir)
