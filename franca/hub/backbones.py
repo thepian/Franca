@@ -103,17 +103,17 @@ def _make_franca_model(
                 f"Unexpected key in the state_dict: {k}. Ensure that the model architecture matches the state_dict."
             )
 
-        flat_blocks = []
-        for chunk in model.blocks:  # chunk is a BlockChunk (nn.ModuleList)
-            for blk in chunk:  # blk is either Identity() or a NestedTensorBlock
-                if not isinstance(blk, nn.Identity):
-                    flat_blocks.append(blk)
+    flat_blocks = []
+    for chunk in model.blocks:  # chunk is a BlockChunk (nn.ModuleList)
+        for blk in chunk:  # blk is either Identity() or a NestedTensorBlock
+            if not isinstance(blk, nn.Identity):
+                flat_blocks.append(blk)
 
-        # replace model.blocks with the flat list…
-        model.blocks = nn.ModuleList(flat_blocks)
-        model.chunked_blocks = False  # so the forward logic uses the "not chunked" path
+    # replace model.blocks with the flat list…
+    model.blocks = nn.ModuleList(flat_blocks)
+    model.chunked_blocks = False  # so the forward logic uses the "not chunked" path
 
-        assert len(model.blocks) == model.n_blocks, f"Expected {model.n_blocks} blocks, but got {len(model.blocks)} blocks."
+    assert len(model.blocks) == model.n_blocks, f"Expected {model.n_blocks} blocks, but got {len(model.blocks)} blocks."
 
     return model
 
