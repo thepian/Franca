@@ -122,7 +122,7 @@ def franca_vitb14(*, pretrained: bool = True, weights: Union[Weights, str] = Wei
     """
     Franca ViT-B/14 model (optionally) pretrained on the In21K dataset.
     """
-    if weights == Weights.DINOV2_IN21K or "Dinov2_In21k":
+    if weights == Weights.DINOV2_IN21K or weights == "Dinov2_In21k":
         img_size = kwargs.pop("img_size", 224)
     else:
         img_size = kwargs.pop("img_size", 518)
