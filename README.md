@@ -74,7 +74,7 @@ Franca is released as a research project to promote transparency, reproducibilit
       <th>ImageNet<br />k-NN</th>
       <th>ImageNet<br />linear</th>
       <th>HummingBird<br />VOC</th>
-      <th>Linear Segm.<br />COCO-Stuff</th>
+      <th>Linear Segm.<br />ADE20K</th>
       <th>download</th>
     </tr>
   </thead>
@@ -87,7 +87,7 @@ Franca is released as a research project to promote transparency, reproducibilit
       <td align="center">80.9%</td>
       <td align="center">82.0%</td>
       <td align="center">75.7%</td>
-      <td align="center">60.5%</td>
+      <td align="center">39.1%</td>
       <td><a href="https://github.com/valeoai/Franca/releases/download/v1.0.0/franca_vitb14_In21k.pth">backbone only</a></td>
     </tr>
     <tr>
@@ -98,7 +98,7 @@ Franca is released as a research project to promote transparency, reproducibilit
       <td align="center">82.6%</td>
       <td align="center">84.2%</td>
       <td align="center">73.5%</td>
-      <td align="center">60.5%</td>
+      <td align="center">41.3%</td>
       <td><a href="https://github.com/valeoai/Franca/releases/download/v1.0.0/franca_vitl14_In21k.pth">backbone only</a></td>
     </tr>
     <tr>
@@ -109,7 +109,7 @@ Franca is released as a research project to promote transparency, reproducibilit
       <td align="center">82.0%</td>
       <td align="center">83.8%</td>
       <td align="center">73.5%</td>
-      <td align="center">60.5%</td>
+      <td align="center">41.4%</td>
       <td><a href="https://github.com/valeoai/Franca/releases/download/v1.0.0/franca_vitl14_Laion600M.pth">backbone only</a></td>
     </tr>
     <tr>
@@ -120,7 +120,7 @@ Franca is released as a research project to promote transparency, reproducibilit
       <td align="center">83.1%</td>
       <td align="center">85.9%</td>
       <td align="center">71.7%</td>
-      <td align="center">57.1%</td>
+      <td align="center">40.2%</td>
       <td>
         <a href="https://github.com/valeoai/Franca/releases/download/v1.0.0/franca_vitg14_In21k_chunked.tar.gz.part_aa">part 1</a>,
         <a href="https://github.com/valeoai/Franca/releases/download/v1.0.0/franca_vitg14_In21k_chunked.tar.gz.part_ab">part 2</a>,
@@ -135,7 +135,7 @@ Franca is released as a research project to promote transparency, reproducibilit
       <td align="center">82.8%</td>
       <td align="center">85.0%</td>
       <td align="center">76.7%</td>
-      <td align="center">60.4%</td>
+      <td align="center">42.4%</td>
       <td>
         <a href="https://github.com/valeoai/Franca/releases/download/v1.0.0/franca_vitg14_Laion600M_chunked.tar.gz.part_aa">part 1</a>,
         <a href="https://github.com/valeoai/Franca/releases/download/v1.0.0/franca_vitg14_Laion600M_chunked.tar.gz.part_ab">part 2</a>,
