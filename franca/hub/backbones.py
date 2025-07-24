@@ -63,7 +63,7 @@ def _make_franca_model(
     vit_config = FrancaConfig(arch=arch_name, **kwargs)
     model, _ = build_model(vit_config, only_teacher=True, img_size=img_size)
 
-    model_full_name = _make_franca_model_name(arch_name, vit_config.patch_size, weights)
+    model_full_name = _make_franca_model_name(arch_name, vit_config.patch_size, weights.value)
 
     if pretrained:
         if weights == Weights.LAION and arch_name == "vit_base":
