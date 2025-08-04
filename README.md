@@ -121,7 +121,7 @@ Franca is released as a research project to promote transparency, reproducibilit
       <td align="left">1,100 M</td>
       <td align="left">In21k</td>
       <td align="center">224</td>
-      <td align="center">83.1%</td>
+      <td align="center">83.0%</td>
       <td align="center">85.9%</td>
       <td align="center">71.7%</td>
       <td align="center">40.2%</td>

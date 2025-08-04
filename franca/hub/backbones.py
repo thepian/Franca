@@ -68,7 +68,10 @@ def _make_franca_model(
         except KeyError:
             raise AssertionError(f"Unsupported weights: {weights}")
 
-    vit_config = FrancaConfig(arch=arch_name, **kwargs)
+    # Extract use_rasa_head from kwargs before passing to FrancaConfig
+    use_rasa_head = kwargs.pop('use_rasa_head', False)
+
+    vit_config = FrancaConfig(arch=arch_name, use_rasa_head=use_rasa_head, **kwargs)
     model, _ = build_model(vit_config, only_teacher=True, img_size=img_size)
 
     model_full_name = _make_franca_model_name(arch_name, vit_config.patch_size, weights.value)
@@ -157,7 +160,7 @@ def franca_vitb14(*, pretrained: bool = True, weights: Union[Weights, str] = Wei
     """
     Franca ViT-B/14 model (optionally) pretrained on the In21K dataset.
     """
-    if weights == Weights.DINOV2_IN21K or weights == "Dinov2_In21k":
+    if weights == Weights.DINOV2_IN21K or weights == "DINOV2_IN21K":
         img_size = kwargs.pop("img_size", 224)
     else:
         img_size = kwargs.pop("img_size", 518)
