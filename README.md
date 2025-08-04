@@ -161,8 +161,8 @@ franca_vitl14 = torch.hub.load('valeoai/Franca', 'franca_vitl14', weights='LAION
 franca_vitg14 = torch.hub.load('valeoai/Franca', 'franca_vitg14', weights='LAION', use_rasa_head=True)
 
 # Dinov2 baseline -- In21k
-franca_vitb14 = torch.hub.load('valeoai/Franca', 'franca_vitb14', weights='DINOV2_IN21K', use_rasa_head=True)
-franca_vitl14 = torch.hub.load('valeoai/Franca', 'franca_vitl14', weights='DINOV2_IN21K', use_rasa_head=True)
+franca_vitb14 = torch.hub.load('valeoai/Franca', 'franca_vitb14', weights='DINOV2_IN21K', use_rasa_head=False)
+franca_vitl14 = torch.hub.load('valeoai/Franca', 'franca_vitl14', weights='DINOV2_IN21K', use_rasa_head=False)
 ```
 
 ## Installation
