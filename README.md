@@ -165,6 +165,12 @@ franca_vitb14 = torch.hub.load('valeoai/Franca', 'franca_vitb14', weights='DINOV
 franca_vitl14 = torch.hub.load('valeoai/Franca', 'franca_vitl14', weights='DINOV2_IN21K', use_rasa_head=False)
 ```
 
+## Converting to CoreML
+
+> uv sync --extra coreml
+
+
+
 ## Installation
 
 ```bash
@@ -243,6 +249,33 @@ print("Patch token shape:", patch_tokens.shape)
 print("Patch token RASA shape:", patch_tokens_debiased.shape)
 ```
 
+## Core ML Deployment
+
+Franca models can be deployed on iOS and macOS using Core ML for high-performance inference:
+
+```bash
+# Export to Core ML format
+uv run python scripts/export_coreml_hub.py
+
+# Compare model formats and performance
+uv run python scripts/compare_model_formats.py
+```
+
+**Performance Results** (Apple Silicon):
+
+- **FP16 Core ML**: 188ms inference (19% faster than FP32)
+- **Model Size**: 165MB
+- **Accuracy**: 99.99%+ preservation
+
+```swift
+// iOS/macOS Integration
+import CoreML
+
+let model = try await MLModel.load(contentsOf: modelURL)
+let features = try await model.prediction(from: input)
+```
+
+See the [Core ML Deployment Guide](COREML_DEPLOYMENT.md) for complete integration examples.
 
 ## Structure
 
@@ -250,6 +283,8 @@ print("Patch token RASA shape:", patch_tokens_debiased.shape)
 - **Training**: [`Training Details`](training.md)
 - **Model card**: [`Models`](model_card.md)
 - **RASA Usage**: [`RASA README`](rasa/README.md)
+- **Core ML Deployment**: [`Core ML Guide`](COREML_DEPLOYMENT.md)
+- **Model Evaluation**: [`Evaluation Tools`](EVALUATION_README.md)
 
 ## Citation
 

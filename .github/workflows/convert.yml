@@ -1,0 +1,15 @@
+name: Convert Franca to Core ML
+
+on:
+  workflow_dispatch:
+
+jobs:
+  convert:
+    runs-on: macos-13
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: uv sync
+      - run: make all

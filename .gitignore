@@ -1,0 +1,33 @@
+# Python / uv
+.venv/
+uv.lock
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Build outputs
+build/
+dist/
+*.egg-info/
+
+
+# Model checkpoints & compiled models
+checkpoints/
+coreml_models/
+coreml_modelsc/
+
+# Temporary validation data / test outputs
+tmp/
+
+
+# macOS Finder / Xcode clutter
+.DS_Store
+*.xcworkspace/
+*.xcodeproj/
+
+
+*.onnx
+*.log

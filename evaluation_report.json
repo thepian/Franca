@@ -1,0 +1,64 @@
+{
+  "model_info": {
+    "coreml_path": "coreml_models/franca_vitb14_in21k_fp32.mlpackage",
+    "model_name": "vitb14",
+    "weights": "IN21K",
+    "coreml_spec": "specificationVersion: 8\ndescription {\n  input {\n    name: \"image\"\n    type {\n      imageType {\n        width: 518\n        height: 518\n        colorSpace: RGB\n      }\n    }\n  }\n  output {\n    name: \"var_625\"\n    type {\n      multiArrayType {\n        shape: 1\n        shape: 768\n        dataType: FLOAT16\n      }\n    }\n  }\n  metadata {\n    userDefined {\n      key: \"com.github.apple.coremltools.source\"\n      value: \"torch==2.2.2\"\n    }\n    userDefined {\n      key: \"com.github.apple.coremltools.source..."
+  },
+  "performance_benchmark": {
+    "num_runs": 10,
+    "torch_mean_time": 4.153343033790589,
+    "torch_std_time": 0.31413639165168405,
+    "coreml_mean_time": 0.2240619421005249,
+    "coreml_std_time": 0.011751570298607504,
+    "speedup_mean": 18.536584101940882,
+    "torch_times": [
+      4.573931932449341,
+      4.196162939071655,
+      4.638981103897095,
+      4.537271976470947,
+      4.143121957778931,
+      4.080719947814941,
+      3.9226419925689697,
+      3.845245122909546,
+      3.701970338821411,
+      3.893383026123047
+    ],
+    "coreml_times": [
+      0.23726797103881836,
+      0.22136592864990234,
+      0.21744680404663086,
+      0.21519899368286133,
+      0.2176380157470703,
+      0.21431493759155273,
+      0.2180461883544922,
+      0.21267199516296387,
+      0.2393357753753662,
+      0.24733281135559082
+    ]
+  },
+  "sample_image_test": {
+    "image_path": "assets/dog.jpg",
+    "original_size": [
+      630,
+      420
+    ],
+    "torch_time": 4.499361991882324,
+    "coreml_time": 0.23018407821655273,
+    "speedup": 19.546799356163163,
+    "mse": "0.029563492",
+    "mae": "0.13677214",
+    "max_diff": "0.5395055",
+    "cosine_similarity": "0.99762887",
+    "torch_norm": "64.92083",
+    "coreml_norm": "63.111774",
+    "torch_output_shape": [
+      1,
+      768
+    ],
+    "coreml_output_shape": [
+      1,
+      768
+    ]
+  }
+}
